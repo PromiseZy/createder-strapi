@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "type_of_articles",
+  "info": {
+    "singularName": "type-of-article",
+    "pluralName": "type-of-articles",
+    "displayName": "typeOfArticle"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "name": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "detail": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "articles": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::article.article",
+      "inversedBy": "type_of_articles"
+    }
+  }
+}
